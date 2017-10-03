@@ -1,0 +1,458 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package interfaces;
+
+import static BDContabilidad.Conexion.conect;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import static BDContabilidad.Conexion.conectar;
+import ModeloContabilidad.OrdenFabricacion;
+import ModeloContabilidad.MateriaPrima;
+import OrdenFabricacion.OrdenTableModel;
+import OrdenFabricacion.MateriaPTableModel;
+
+import static java.awt.Frame.NORMAL;
+import java.sql.CallableStatement;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+import static javax.swing.WindowConstants.HIDE_ON_CLOSE;
+import javax.swing.table.DefaultTableColumnModel;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
+/**
+ *
+ * @author Administrador
+ */
+public class OrdenFab_MateriaPrima extends javax.swing.JFrame {
+    String idordenmp="",idmp="",idorden="",monto="",codigomp="";
+    double Total=0;
+    public String nordem;
+    int b=0,pos=0;
+    public MateriaPTableModel materiasMP = new MateriaPTableModel();
+    
+    private int idOrdenFabricacion;
+    private String codigoOrden;
+    public OrdenFab_MateriaPrima(int idOrden,String codigo) {
+        idOrdenFabricacion = idOrden;
+        codigoOrden=codigo;
+        initComponents();
+        inicializarColumnas();
+        consultaInicial();
+        llenarCB();
+        if (getOrdenFabricacionPorId().getAbierta() == 0)
+        {
+            comboMP.setEnabled(false);
+            montoMptxt.setEnabled(false);
+            txtNorden.setEnabled(false);
+            jButton1.setEnabled(false);
+        }
+        //txtNorden.setEditable(FALSE);
+    }
+    
+    private void inicializarColumnas() {
+        TableColumnModel tColumnModel = new DefaultTableColumnModel();
+        for (int i = 0; i <2; i++) {
+            TableColumn col = new TableColumn(i);
+            switch (i) {
+                case 0:
+                    col.setHeaderValue("Nombre");
+                    break;
+                case 1:
+                    col.setHeaderValue("Monto");
+                    break;
+            }
+            tColumnModel.addColumn(col);
+        }
+        tablaMateria.setColumnModel(tColumnModel);
+    }
+    
+    
+    private void consultaInicial() {
+        conectar();
+         try {
+             materiasMP.materiasP.clear();
+             Statement stat = conect.createStatement(HIDE_ON_CLOSE, NORMAL);
+          // Se realiza la consulta
+             ResultSet rs = stat.executeQuery ("SELECT monto,nombremateriaprima from orden_materiaprima as e join materiasprimas as l "
+                     + "on e.idmateriaprima=l.idmateriaprima where e.idorden='"+idOrdenFabricacion+"'"); //con es la conexión que hemos creado antes con el patrón singleton                                                     //listaEquipos() es la consulta a la base de datos, que retorna un ResultSet
+            while(rs.next()){
+                MateriaPrima ordenMP = new MateriaPrima();
+                ordenMP.setMonto(rs.getDouble("monto"));
+                ordenMP.setNombreMP(rs.getString("nombremateriaprima"));
+                this.materiasMP.materiasP.add(ordenMP);                
+            }
+            tablaMateria.updateUI();//Actualiza la tabla
+ 
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+    
+    //Llenar combo de materias
+    public void llenarCB(){
+        comboMP.removeAllItems();
+        //txtNorden.setText(Integer.toString(idOrdenFabricacion));
+        txtNorden.setText(codigoOrden);
+        conectar();
+        ArrayList<String> mp = new ArrayList<String>();
+        
+        try {
+             Statement stat = conect.createStatement(HIDE_ON_CLOSE, NORMAL);
+          // Se realiza la consulta
+             ResultSet rs = stat.executeQuery ("SELECT idmateriaprima,codigo,nombremateriaprima from materiasprimas ORDER BY (nombremateriaprima)"); //con es la conexión que hemos creado antes con el patrón singleton                                                     //listaEquipos() es la consulta a la base de datos, que retorna un ResultSet
+            while(rs.next()){
+                mp.add(rs.getString("nombremateriaprima"));
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        for(int i=0; i<mp.size();i++){
+        comboMP.addItem(mp.get(i));
+        }
+        montoMptxt.setText("");
+}
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        comboMP = new javax.swing.JComboBox();
+        montoMptxt = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        txtNorden = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaMateria = new javax.swing.JTable();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(152, 190, 211));
+        jPanel1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+
+        comboMP.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel1.setText("Monto");
+
+        jLabel2.setText("Materia Prima");
+
+        jButton1.setText("Agregar MP");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Cerrar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Codigo Orden");
+
+        tablaMateria.setModel(materiasMP);
+        jScrollPane1.setViewportView(tablaMateria);
+
+        jLabel12.setBackground(new java.awt.Color(101, 151, 179));
+        jLabel12.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("MATERIA PRIMA A SELECCIONAR");
+        jLabel12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel12.setOpaque(true);
+
+        jLabel11.setBackground(new java.awt.Color(101, 151, 179));
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("MATERIA PRIMA UTILIZADA");
+        jLabel11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel11.setOpaque(true);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(88, 88, 88)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(comboMP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(montoMptxt, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(24, 24, 24)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtNorden, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(135, 135, 135)
+                                .addComponent(jButton1)
+                                .addGap(63, 63, 63)
+                                .addComponent(jButton2)))))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel12)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboMP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(montoMptxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(txtNorden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(48, 48, 48)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addGap(19, 19, 19)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       CrearOrdenFab obj = new CrearOrdenFab();
+       //obj.consultaInicial();
+       obj.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        //DefaultTableModel modelo = (DefaultTableModel) tablaMP.getModel();
+        monto=montoMptxt.getText();
+        String nomMP=comboMP.getSelectedItem().toString();
+        String id ="",codigo="",seleccion="",seleccionA="",seleccion2="",seleccion3="",nombre="",seleccion5="";
+        Double porcentaje = getOrdenFabricacionPorId().getPorcentajeMP() / 100.0;
+        
+            conectar();
+            if(montoMptxt.getText().isEmpty()){
+                JOptionPane.showMessageDialog(null, "Monto no especificado, Ingrese un valor positivo");
+            }
+            else {
+                
+                try {
+             Statement stat = conect.createStatement(HIDE_ON_CLOSE, NORMAL);
+          // Se realiza la consulta para obtener idmateriaprima
+             ResultSet rs = stat.executeQuery ("SELECT idmateriaprima,codigo from materiasprimas where nombremateriaprima='"+nomMP+"'"); //con es la conexión que hemos creado antes con el patrón singleton                                                     //listaEquipos() es la consulta a la base de datos, que retorna un ResultSet
+            while(rs.next()){
+                idmp=Integer.toString(rs.getInt("idmateriaprima"));
+                codigomp=rs.getString("codigo");
+            }
+            conect.close();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();  
+        }
+                conectar();
+                try{
+                // se crea la orden de materia prima
+                Statement stat = conect.createStatement();
+                stat.execute("insert into orden_materiaprima (idordenmp,idmateriaprima,idorden,monto) "
+                        + "VALUES(NULL,'"+idmp+"','"+idOrdenFabricacion+"','"+monto+"')");
+                stat.close();
+                conect.close();
+                }catch (SQLException e)
+                   {
+                        System.out.println (e);
+                } 
+            //actualizar monto de orden
+            conectar();
+             Total=Double.parseDouble(monto);   
+            try{
+                // Preparamos la consulta
+                Statement stat = conect.createStatement();
+                
+                //Double porcentaje = getOrdenFabricacionPorId().getPorcentajeMP() / 100.0;
+                System.out.println("Porcentaje: " + porcentaje.toString());
+                System.out.println("Total CIF: " + Total * porcentaje);
+                stat.execute("UPDATE ordenfabricacion SET saldoactual=saldoactual +'"+(Total + Total * porcentaje) +"',materiaprima=materiaprima +'"+Total+"',"
+                        + "costoindirectofab=costoindirectofab +'"+ Total * porcentaje +"' WHERE idorden='"+idOrdenFabricacion+"'");
+                stat.close();
+                conect.close();
+            }catch (SQLException e)
+                {
+               System.out.println (e);
+                }
+            //Actualizar inventario abonandola
+            conectar(); 
+            try{
+                // Preparamos la consulta
+                Statement stat = conect.createStatement();
+                stat.execute("UPDATE cuenta SET HABER=HABER +'"+Total+"' WHERE CODIGO='"+codigomp+"'");
+                stat.close();
+                conect.close();
+            }catch (SQLException e)
+                {
+               System.out.println (e);
+                }
+            //Actualiza haber de Variación de CIF
+            conectar(); 
+             try{
+                // Preparamos la consulta
+                Statement stat = conect.createStatement();
+                stat.execute("UPDATE cuenta SET HABER=HABER +'"+(Total * porcentaje)+"' WHERE CODIGO=110801");
+                stat.close();
+                conect.close();
+            }catch (SQLException e)
+                {
+               System.out.println (e);
+                }
+            consultaInicial();
+            montoMptxt.setText("");
+            try {
+                //Double porcentaje = getOrdenFabricacionPorId().getPorcentajeMP() / 100.0;
+                String codigoOF = "1109";
+                if (Integer.toString(getOrdenFabricacionPorId().getNoorden()).length() == 1)
+                    codigoOF += "0";
+                codigoOF += Integer.toString(getOrdenFabricacionPorId().getNoorden());
+
+                CallableStatement cstm = conect.prepareCall("{call sic.sp_insertar_cuentas(?,?,?,?,?,?)}");
+                cstm.setInt(1,Integer.parseInt(codigoOF));//codigo de la cuenta: Orden de fabricación
+                cstm.setString(2, "");//vCuenta
+                cstm.setString(3, "");//vTipo
+                //cstm.setDouble(4, Total);//vSDeudor
+                cstm.setDouble(4,Total + Total * porcentaje);
+                cstm.setDouble(5, 0);//vSAcreedor
+                cstm.setInt(6,1);//vCantidad
+                cstm.execute();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            }
+         
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(OrdenFab_MateriaPrima.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(OrdenFab_MateriaPrima.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(OrdenFab_MateriaPrima.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(OrdenFab_MateriaPrima.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+    }
+    
+    private OrdenFabricacion getOrdenFabricacionPorId() {
+        conectar();
+        OrdenFabricacion fab = new OrdenFabricacion();
+         try {             
+             String sql = "SELECT idorden, noorden, codigo, nombre, fechacrea, saldoactual, abierta, materiaprima, manodeobra, costoindirectofab,"
+                     + "porcentajemod, porcentajemp, cantidad, costounitario"
+                     + " FROM ordenfabricacion WHERE idorden = ?";
+             java.sql.PreparedStatement stat = conect.prepareStatement(sql);
+             stat.setInt(1, idOrdenFabricacion);
+             ResultSet rs = stat.executeQuery(); //con es la conexión que hemos creado antes con el patrón singleton                                                     //listaEquipos() es la consulta a la base de datos, que retorna un ResultSet
+            while(rs.next()){
+                fab.setAbierta(rs.getInt("abierta"));
+                fab.setCif(rs.getDouble("costoindirectofab"));
+                fab.setCodigo(rs.getInt("codigo"));
+                fab.setFecha(rs.getString("fechacrea"));
+                fab.setIdorden(rs.getInt("idorden"));
+                fab.setManodeobra(rs.getDouble("manodeobra"));
+                fab.setMateriaprima(rs.getDouble("materiaprima"));
+                fab.setNombre(rs.getString("nombre"));
+                fab.setNoorden(rs.getInt("noorden"));
+                fab.setSaldoactual(rs.getDouble("saldoactual")); 
+                fab.setPorcentajeMOD(rs.getInt("porcentajemod"));
+                fab.setPorcentajeMP(rs.getInt("porcentajemp"));
+                fab.setCantidad(rs.getInt("cantidad"));
+                fab.setPrecio(rs.getDouble("costounitario"));
+            }
+         }
+         catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+         return fab;
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox comboMP;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField montoMptxt;
+    private javax.swing.JTable tablaMateria;
+    private javax.swing.JTextField txtNorden;
+    // End of variables declaration//GEN-END:variables
+}
