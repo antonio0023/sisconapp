@@ -62,9 +62,11 @@ public class IniciarSesion extends javax.swing.JFrame {
         jLabel5.setText("Fecha: "+dia+"/"+mes+"/"+ano);
         jLabel6.setText("Hora: "+hora+":"+minuto);
         
-        //Default login
+        /*Para desarrollo y evitar ingresar los datos cada vez
+        que se ejecuta el sistema, dejar el usuario y contraseña sin comentario.
+        
         txtUsuario.setText("anto");
-        txtContrasenia1.setText("asd");
+        txtContrasenia1.setText("asd");*/
        
         
     }
