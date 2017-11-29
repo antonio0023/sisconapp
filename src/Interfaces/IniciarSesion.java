@@ -6,11 +6,11 @@
 package Interfaces;
 
 import Otros.Usuario;
-import java.awt.BorderLayout;
+//import java.awt.BorderLayout;
 import static Conexion.Conexion.con;
 import static Conexion.Conexion.conectar;
 import static java.awt.Frame.NORMAL;
-import java.awt.List;
+//import java.awt.List;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -63,10 +63,10 @@ public class IniciarSesion extends javax.swing.JFrame {
         jLabel6.setText("Hora: "+hora+":"+minuto);
         
         /*Para desarrollo y evitar ingresar los datos cada vez
-        que se ejecuta el sistema, dejar el usuario y contraseña sin comentario.
+        que se ejecuta el sistema, dejar el usuario y contraseña sin comentario.*/
         
         txtUsuario.setText("anto");
-        txtContrasenia1.setText("asd");*/
+        txtContrasenia1.setText("asd");
        
         
     }

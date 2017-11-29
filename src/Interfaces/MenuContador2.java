@@ -131,6 +131,11 @@ ArrayList<Cuenta> subCuentas = new ArrayList<Cuenta>();
         jLabel3.setText("Agregar Cuenta");
 
         btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Sin nombre_1.png"))); // NOI18N
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel4.setText("Gestionar Transaccion");
@@ -302,7 +307,7 @@ ArrayList<Cuenta> subCuentas = new ArrayList<Cuenta>();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void btnFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarActionPerformed
-                Object[] opciones = {"Aceptar", "Cancelar"};
+        Object[] opciones = {"Aceptar", "Cancelar"};
         int eleccion = JOptionPane.showOptionDialog // Sigue en la siguiente linea
                 (rootPane, "¿En realidad desea finalizar el periodo:?", "Mensaje de Confirmacion", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, "Aceptar");
         if (eleccion == JOptionPane.YES_OPTION) {
@@ -360,6 +365,10 @@ ArrayList<Cuenta> subCuentas = new ArrayList<Cuenta>();
             
         }//end if:
     }//GEN-LAST:event_btnFinalizarActionPerformed
+
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAgregarActionPerformed
 
     /**
      * @param args the command line arguments

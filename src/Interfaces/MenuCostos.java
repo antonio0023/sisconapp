@@ -9,6 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -43,7 +44,9 @@ public class MenuCostos extends javax.swing.JFrame {
         btnAtras1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         btnPlanillas = new javax.swing.JButton();
-        bgCostos = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        btnPlanillas1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         jLabel3.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -61,12 +64,12 @@ public class MenuCostos extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Algerian", 0, 18)); // NOI18N
         jLabel4.setText("Menu COSTOS");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, -1, -1));
 
         lblAtras1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblAtras1.setForeground(new java.awt.Color(255, 255, 255));
         lblAtras1.setText("Atras");
-        getContentPane().add(lblAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 380, -1, -1));
+        getContentPane().add(lblAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, -1, -1));
 
         btnAtras1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salir.png"))); // NOI18N
         btnAtras1.addActionListener(new java.awt.event.ActionListener() {
@@ -74,7 +77,7 @@ public class MenuCostos extends javax.swing.JFrame {
                 btnAtras1ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, 47, 60));
+        getContentPane().add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 280, 47, 60));
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel5.setText("Planillas");
@@ -88,9 +91,20 @@ public class MenuCostos extends javax.swing.JFrame {
         });
         getContentPane().add(btnPlanillas, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
 
-        bgCostos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cafe.png"))); // NOI18N
-        bgCostos.setText("jLabel1");
-        getContentPane().add(bgCostos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 420));
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel6.setText("Ordenes de Fabricacion");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, -1, -1));
+
+        btnPlanillas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/hoja.png"))); // NOI18N
+        btnPlanillas1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPlanillas1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPlanillas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cafe.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -101,6 +115,10 @@ public class MenuCostos extends javax.swing.JFrame {
 
     private void btnPlanillasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlanillasActionPerformed
         // TODO add your handling code here:
+        MenuPlanillas menuPlanillas = new MenuPlanillas();
+        menuPlanillas.setVisible(true);
+        this.setVisible(false);
+        JOptionPane.showMessageDialog(this, "En mantenimiento!");
     }//GEN-LAST:event_btnPlanillasActionPerformed
 
     private void btnAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtras1ActionPerformed
@@ -109,6 +127,15 @@ public class MenuCostos extends javax.swing.JFrame {
         menu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnAtras1ActionPerformed
+
+    private void btnPlanillas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlanillas1ActionPerformed
+        // TODO add your handling code here:
+        CrearOrdenF menuOrdenF = new CrearOrdenF();
+        menuOrdenF.setVisible(true);
+        
+        this.setVisible(false);
+                
+    }//GEN-LAST:event_btnPlanillas1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,13 +174,15 @@ public class MenuCostos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel bgCostos;
     private javax.swing.JButton btnAtras1;
     private javax.swing.JButton btnPlanillas;
+    private javax.swing.JButton btnPlanillas1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel lblAtras1;
     // End of variables declaration//GEN-END:variables
 }
