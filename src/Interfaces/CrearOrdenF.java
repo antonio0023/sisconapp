@@ -260,7 +260,7 @@ public class CrearOrdenF extends javax.swing.JFrame {
         //tl es el texto limpio, para agilizar la limpieza de los fields
         Object[] opciones = {"Si", "No"};
         int eleccion = JOptionPane.showOptionDialog // Sigue en la siguiente linea
-                (rootPane, "¿Desea cancelar el proceso?", "Mensaje de Confirmacion", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, "Aceptar");
+                (rootPane, "Los datos aún no se han guardado, ¿desea continuar?", "Mensaje de Confirmacion", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, "Aceptar");
         if (eleccion == JOptionPane.YES_OPTION) {
         String tl= "";
         txtCantidad.setText(tl);
@@ -298,7 +298,7 @@ public class CrearOrdenF extends javax.swing.JFrame {
         
         if(Character.isLetter(c)){
             evt.consume();
-            JOptionPane.showMessageDialog(this, "Debes ingresar unicamente numeros","Advertencia",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Solo se admiten números","Advertencia",JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_txtCantidadKeyTyped
 

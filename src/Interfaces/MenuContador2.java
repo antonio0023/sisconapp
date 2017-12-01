@@ -32,14 +32,14 @@ ArrayList<Cuenta> subCuentas = new ArrayList<Cuenta>();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(false);
-        setTitle("Menu Contador");
+      setTitle("Menu Contador");
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/inicio.png")).getImage());
         ((JPanel)getContentPane()).setOpaque(false);
         ImageIcon uno=new ImageIcon(this.getClass().getResource("/Imagenes/cafe.png"));
         JLabel fondo= new JLabel();
         fondo.setIcon(uno);
         getLayeredPane().add(fondo,JLayeredPane.FRAME_CONTENT_LAYER);
-        fondo.setBounds(0,0,uno.getIconWidth(),uno.getIconHeight());
+        fondo.setBounds(0,0,uno.getIconWidth(),uno.getIconHeight());  
     }
 
        public void periodoProceso() {
@@ -141,11 +141,21 @@ ArrayList<Cuenta> subCuentas = new ArrayList<Cuenta>();
         jLabel4.setText("Gestionar Transaccion");
 
         btnGestionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Sin nombre_2.png"))); // NOI18N
+        btnGestionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGestionarActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel5.setText("Estados Financieros");
 
         btnEstados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estados.png"))); // NOI18N
+        btnEstados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEstadosActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel6.setText("Finalizar Periodo Contable");
@@ -287,6 +297,7 @@ ArrayList<Cuenta> subCuentas = new ArrayList<Cuenta>();
             }
             btnGestionar.setEnabled(true);
             btnFinalizar.setEnabled(true);
+            btnAgregar.setEnabled(true);
             btnIniciar.setEnabled(false);
             btnAjustar.setEnabled(false);
             btnEstados.setEnabled(false);
@@ -312,11 +323,11 @@ ArrayList<Cuenta> subCuentas = new ArrayList<Cuenta>();
                 (rootPane, "¿En realidad desea finalizar el periodo:?", "Mensaje de Confirmacion", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, "Aceptar");
         if (eleccion == JOptionPane.YES_OPTION) {
             btnGestionar.setEnabled(false);
-            btnAgregar.setEnabled(false);
             btnFinalizar.setEnabled(false);
             btnEstados.setEnabled(true);
             btnAjustar.setEnabled(true);
-            btnIniciar.setEnabled(false);
+            btnIniciar.setEnabled(true);
+            btnAgregar.setEnabled(true);
 
             conectar();
             try {
@@ -363,12 +374,27 @@ ArrayList<Cuenta> subCuentas = new ArrayList<Cuenta>();
             }
             
             
-        }//end if:
+        }
+
     }//GEN-LAST:event_btnFinalizarActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        // TODO add your handling code here:
+        AgregarCuenta menu = new AgregarCuenta();
+        this.setVisible(false);
+        menu.setVisible(true);
     }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnGestionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGestionarActionPerformed
+        GestionarTransaccion menu = new GestionarTransaccion();
+        menu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnGestionarActionPerformed
+
+    private void btnEstadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstadosActionPerformed
+        EstadosFinancieros menu= new EstadosFinancieros();
+        menu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnEstadosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -395,6 +421,7 @@ ArrayList<Cuenta> subCuentas = new ArrayList<Cuenta>();
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MenuContador2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

@@ -33,9 +33,9 @@ public class MenuAdmin extends javax.swing.JFrame {
      * Creates new form MenuPrincipal
      */
         private final DefaultTableModel modelo;
-    ArrayList<Usuario> Usuarios = new ArrayList<Usuario>();
-    public static int fs;
-    public MenuAdmin() {
+        ArrayList<Usuario> Usuarios = new ArrayList<Usuario>();
+        public static int fs;
+        public MenuAdmin() {
         initComponents();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -100,7 +100,7 @@ public class MenuAdmin extends javax.swing.JFrame {
                 modelo.addRow(fila); // Añade una fila al final del modelo de la tabla
             }
                  
-                 jTable3.updateUI();//Actualiza la tabla
+                 jTable3.updateUI(); //Actualiza la tabla
  
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -293,14 +293,14 @@ public class MenuAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        IniciarSesion Ini = new IniciarSesion();
-        Ini.setVisible(true);
+        IniciarSesion ini = new IniciarSesion();
+        ini.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        AgregarUsuario menu = new AgregarUsuario();
-        menu.setVisible(true);
+        AgregarUsuario menuAgregarUsuario = new AgregarUsuario();
+        menuAgregarUsuario.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -314,8 +314,8 @@ public class MenuAdmin extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         int fse= jTable3.getSelectedRow();
-             Usuario user=Usuarios.get(fse);
-             int id_user=user.getId_usuario();
+        Usuario user=Usuarios.get(fse);
+        int id_user=user.getId_usuario();
             
              conectar();
           
