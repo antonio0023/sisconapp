@@ -105,7 +105,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
         jLabel5.setText("Confirmar");
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel6.setText("Contraceña:");
+        jLabel6.setText("Contraseña:");
 
         txtConContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
