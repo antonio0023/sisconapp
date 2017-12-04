@@ -19,7 +19,7 @@ public class Conexion {
     try {
 
            Class.forName("org.gjt.mm.mysql.Driver");
-           con=DriverManager.getConnection("jdbc:mysql://localhost/sic","root","");
+           con=DriverManager.getConnection("jdbc:mysql://localhost/sic2","root","");
             }  catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Error no se puede conectar con la base de datos");
         }
