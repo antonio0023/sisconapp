@@ -38,7 +38,7 @@ public class CerrarOrden extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
         
-        this.setTitle("Cerrar  Orden");
+        this.setTitle("Cerrar Orden");
         
     }
 
@@ -52,32 +52,25 @@ public class CerrarOrden extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel5 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         codOrden = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         nombretxt = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         btnCerrarOrden = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel5.setBackground(new java.awt.Color(117, 60, 17));
         jPanel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel5.setForeground(new java.awt.Color(255, 255, 255));
-
-        jLabel1.setBackground(new java.awt.Color(51, 51, 55));
-        jLabel1.setFont(new java.awt.Font("Gotham Thin", 0, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(222, 222, 222));
-        jLabel1.setText("Código");
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         codOrden.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         codOrden.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        jLabel2.setBackground(new java.awt.Color(51, 51, 55));
-        jLabel2.setFont(new java.awt.Font("Gotham Thin", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(222, 222, 222));
-        jLabel2.setText("Nombre");
+        jPanel5.add(codOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 94, 80, -1));
 
         nombretxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         nombretxt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -86,9 +79,11 @@ public class CerrarOrden extends javax.swing.JFrame {
                 nombretxtActionPerformed(evt);
             }
         });
+        jPanel5.add(nombretxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 128, -1));
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ordenFabWhite.png"))); // NOI18N
+        jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(171, 9, -1, -1));
 
         btnCerrarOrden.setBackground(new java.awt.Color(117, 60, 17));
         btnCerrarOrden.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -99,6 +94,7 @@ public class CerrarOrden extends javax.swing.JFrame {
                 btnCerrarOrdenActionPerformed(evt);
             }
         });
+        jPanel5.add(btnCerrarOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(236, 92, 111, -1));
 
         btnCancelar.setBackground(new java.awt.Color(117, 60, 17));
         btnCancelar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -109,55 +105,20 @@ public class CerrarOrden extends javax.swing.JFrame {
                 btnCancelarActionPerformed(evt);
             }
         });
+        jPanel5.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(236, 145, 111, -1));
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(169, 169, 169)
-                        .addComponent(jLabel5))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(codOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nombretxt, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(39, 39, 39)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnCerrarOrden, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
-                            .addComponent(btnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(58, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addComponent(jLabel5)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(codOrden)
-                    .addComponent(btnCerrarOrden))
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nombretxt))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(btnCancelar)
-                        .addContainerGap(49, Short.MAX_VALUE))))
-        );
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Nombre");
+        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Código");
+        jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 95, -1, 20));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cafee.jpg"))); // NOI18N
+        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 220));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -297,9 +258,10 @@ public class CerrarOrden extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnCerrarOrden;
     private javax.swing.JTextField codOrden;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JTextField nombretxt;
     // End of variables declaration//GEN-END:variables

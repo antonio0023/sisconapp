@@ -142,52 +142,41 @@ public class OrdenFab_MateriaPrima extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton3 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         comboMP = new javax.swing.JComboBox();
-        montoMptxt = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        txtNorden = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaMateria = new javax.swing.JTable();
-        jLabel12 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jSeparator5 = new javax.swing.JSeparator();
-        jSeparator6 = new javax.swing.JSeparator();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txtNorden = new javax.swing.JTextField();
+        montoMptxt = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         jButton3.setText("jButton3");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cafee.jpg"))); // NOI18N
 
-        jPanel1.setBackground(new java.awt.Color(33, 33, 78));
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(117, 60, 17));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jPanel1.setMaximumSize(new java.awt.Dimension(0, 0));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         comboMP.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(comboMP, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 104, -1, 22));
 
-        montoMptxt.setBackground(new java.awt.Color(33, 33, 78));
-        montoMptxt.setFont(new java.awt.Font("Gotham Thin", 1, 12)); // NOI18N
-        montoMptxt.setForeground(new java.awt.Color(73, 181, 172));
-        montoMptxt.setBorder(null);
-        montoMptxt.setCaretColor(new java.awt.Color(73, 181, 172));
-
-        jLabel1.setBackground(new java.awt.Color(51, 51, 55));
-        jLabel1.setFont(new java.awt.Font("Gotham Thin", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(222, 222, 222));
-        jLabel1.setText("Monto");
-
-        jLabel2.setBackground(new java.awt.Color(51, 51, 55));
-        jLabel2.setFont(new java.awt.Font("Gotham Thin", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(222, 222, 222));
-        jLabel2.setText("Materia Prima");
-
-        jButton1.setBackground(new java.awt.Color(33, 33, 62));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(117, 60, 17));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Agregar MP");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -195,9 +184,10 @@ public class OrdenFab_MateriaPrima extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(33, 33, 62));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(255, 0, 0));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Cerrar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -205,129 +195,83 @@ public class OrdenFab_MateriaPrima extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-
-        txtNorden.setBackground(new java.awt.Color(33, 33, 78));
-        txtNorden.setFont(new java.awt.Font("Gotham Thin", 1, 12)); // NOI18N
-        txtNorden.setForeground(new java.awt.Color(255, 255, 255));
-        txtNorden.setBorder(null);
-
-        jLabel3.setBackground(new java.awt.Color(51, 51, 55));
-        jLabel3.setFont(new java.awt.Font("Gotham Thin", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(222, 222, 222));
-        jLabel3.setText("Codigo Orden");
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, 86, -1));
 
         tablaMateria.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(73, 181, 172)));
         tablaMateria.setModel(materiasMP);
         jScrollPane1.setViewportView(tablaMateria);
 
-        jLabel12.setBackground(new java.awt.Color(33, 33, 78));
-        jLabel12.setFont(new java.awt.Font("Gotham Thin", 1, 24)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("MATERIA PRIMA A SELECCIONAR");
-        jLabel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(73, 181, 172)));
-        jLabel12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel12.setOpaque(true);
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 470, 178));
 
-        jLabel11.setBackground(new java.awt.Color(33, 33, 78));
-        jLabel11.setFont(new java.awt.Font("Gotham Thin", 1, 14)); // NOI18N
+        jLabel11.setBackground(new java.awt.Color(117, 60, 17));
+        jLabel11.setFont(new java.awt.Font("Algerian", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_MP.png"))); // NOI18N
         jLabel11.setText("MATERIA PRIMA UTILIZADA");
         jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(73, 181, 172)));
         jLabel11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel11.setOpaque(true);
         jLabel11.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 506, -1));
 
-        jSeparator5.setBackground(new java.awt.Color(73, 181, 172));
-        jSeparator5.setForeground(new java.awt.Color(73, 181, 172));
+        jLabel10.setBackground(new java.awt.Color(117, 60, 17));
+        jLabel10.setFont(new java.awt.Font("Algerian", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Materia prima");
+        jLabel10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel10.setOpaque(true);
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 22, 482, -1));
 
-        jSeparator6.setBackground(new java.awt.Color(73, 181, 172));
-        jSeparator6.setForeground(new java.awt.Color(73, 181, 172));
+        jLabel4.setBackground(new java.awt.Color(117, 60, 17));
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel4.setText("Codigo Orden");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 80, 24));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(18, 18, 18)
-                            .addComponent(jLabel2)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(comboMP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(jLabel1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(montoMptxt, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(18, 18, 18)
-                            .addComponent(jLabel3)
-                            .addGap(18, 18, 18)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtNorden, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
-                                .addComponent(jSeparator6)))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(161, 161, 161)
-                            .addComponent(jButton1)
-                            .addGap(78, 78, 78)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(112, 112, 112)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(56, 56, 56)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(34, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel12)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNorden)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(montoMptxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGap(3, 3, 3))
-                                .addComponent(comboMP, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(0, 0, 0)
-                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(52, 52, 52)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addGap(19, 19, 19)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12))
-        );
+        jLabel5.setBackground(new java.awt.Color(117, 60, 17));
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel5.setText("Materia Prima");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 100, 80, 24));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        txtNorden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNordenActionPerformed(evt);
+            }
+        });
+        txtNorden.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNordenKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtNorden, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 44, -1));
+
+        montoMptxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                montoMptxtActionPerformed(evt);
+            }
+        });
+        montoMptxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                montoMptxtKeyTyped(evt);
+            }
+        });
+        jPanel1.add(montoMptxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 44, -1));
+
+        jLabel6.setBackground(new java.awt.Color(117, 60, 17));
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("Monto");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 80, 24));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cafee.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 0, 680, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -444,6 +388,28 @@ public class OrdenFab_MateriaPrima extends javax.swing.JFrame {
          
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void txtNordenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNordenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNordenActionPerformed
+
+    private void txtNordenKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNordenKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNordenKeyTyped
+
+    private void montoMptxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_montoMptxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_montoMptxtActionPerformed
+
+    private void montoMptxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_montoMptxtKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+
+        if(Character.isLetter(c)){
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "Solo se admiten números","Advertencia",JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_montoMptxtKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -514,14 +480,14 @@ public class OrdenFab_MateriaPrima extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JTextField montoMptxt;
     private javax.swing.JTable tablaMateria;
     private javax.swing.JTextField txtNorden;

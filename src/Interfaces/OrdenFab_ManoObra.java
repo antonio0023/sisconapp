@@ -218,6 +218,7 @@ public class OrdenFab_ManoObra extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -230,11 +231,13 @@ public class OrdenFab_ManoObra extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         ddlEmpleado = new javax.swing.JComboBox<>();
-        txtCantidadHoras = new javax.swing.JTextField();
-        txtMonto = new javax.swing.JTextField();
         txtFecha = new datechooser.beans.DateChooserCombo();
         jSeparator6 = new javax.swing.JSeparator();
-        jSeparator7 = new javax.swing.JSeparator();
+        txtCantidadHoras = new javax.swing.JTextField();
+        txtMonto = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+
+        jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(152, 190, 211));
@@ -243,58 +246,64 @@ public class OrdenFab_ManoObra extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel10.setBackground(new java.awt.Color(33, 33, 78));
-        jLabel10.setFont(new java.awt.Font("Gotham Thin", 1, 24)); // NOI18N
+        jLabel10.setBackground(new java.awt.Color(117, 60, 17));
+        jLabel10.setFont(new java.awt.Font("Algerian", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("MANO DE OBRA");
-        jLabel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(73, 181, 172)));
         jLabel10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel10.setOpaque(true);
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 22, 482, -1));
 
-        jLabel1.setBackground(new java.awt.Color(51, 51, 55));
-        jLabel1.setFont(new java.awt.Font("Gotham Thin", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(222, 222, 222));
+        jLabel1.setBackground(new java.awt.Color(117, 60, 17));
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Empleado:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 100, 76, 24));
 
-        jLabel2.setBackground(new java.awt.Color(51, 51, 55));
-        jLabel2.setFont(new java.awt.Font("Gotham Thin", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(222, 222, 222));
+        jLabel2.setBackground(new java.awt.Color(117, 60, 17));
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Cantidad de horas:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 90, -1, 44));
 
-        jLabel3.setBackground(new java.awt.Color(51, 51, 55));
-        jLabel3.setFont(new java.awt.Font("Gotham Thin", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(222, 222, 222));
+        jLabel3.setBackground(new java.awt.Color(117, 60, 17));
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Monto:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(347, 154, 52, 27));
 
-        jLabel4.setBackground(new java.awt.Color(51, 51, 55));
-        jLabel4.setFont(new java.awt.Font("Gotham Thin", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(222, 222, 222));
+        jLabel4.setBackground(new java.awt.Color(117, 60, 17));
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Fecha:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 149, 52, 27));
 
         tablaMod.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(73, 181, 172)));
         tablaMod.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         tablaMod.setModel(OrdenMOModel);
         jScrollPane1.setViewportView(tablaMod);
 
-        jLabel11.setBackground(new java.awt.Color(33, 33, 78));
-        jLabel11.setFont(new java.awt.Font("Gotham Thin", 1, 14)); // NOI18N
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 240, 503, 190));
+
+        jLabel11.setBackground(new java.awt.Color(117, 60, 17));
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Bread_40px.png"))); // NOI18N
         jLabel11.setText("OF");
-        jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(73, 181, 172)));
         jLabel11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel11.setOpaque(true);
         jLabel11.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(-80, 60, 572, -1));
 
-        jButton1.setBackground(new java.awt.Color(33, 33, 62));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(255, 0, 0));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Cerrar");
         jButton1.setBorderPainted(false);
@@ -303,9 +312,10 @@ public class OrdenFab_ManoObra extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 86, -1));
 
-        jButton2.setBackground(new java.awt.Color(33, 33, 62));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(117, 60, 17));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Guardar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -313,6 +323,7 @@ public class OrdenFab_ManoObra extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 211, 86, -1));
 
         ddlEmpleado.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         ddlEmpleado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -321,126 +332,43 @@ public class OrdenFab_ManoObra extends javax.swing.JFrame {
                 ddlEmpleadoActionPerformed(evt);
             }
         });
+        jPanel1.add(ddlEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 103, 168, -1));
 
-        txtCantidadHoras.setBackground(new java.awt.Color(153, 102, 0));
-        txtCantidadHoras.setFont(new java.awt.Font("Gotham Thin", 1, 14)); // NOI18N
-        txtCantidadHoras.setForeground(new java.awt.Color(73, 181, 172));
-        txtCantidadHoras.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtCantidadHoras.setBorder(null);
-        txtCantidadHoras.setCaretColor(new java.awt.Color(73, 181, 172));
-        txtCantidadHoras.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtCantidadHorasFocusLost(evt);
-            }
-        });
+        txtFecha.setLocale(new java.util.Locale("es", "SV", ""));
+        jPanel1.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 154, 168, -1));
+
+        jSeparator6.setBackground(new java.awt.Color(73, 181, 172));
+        jSeparator6.setForeground(new java.awt.Color(73, 181, 172));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1073, 148, 1, -1));
+
         txtCantidadHoras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCantidadHorasActionPerformed(evt);
             }
         });
+        txtCantidadHoras.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantidadHorasKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtCantidadHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 44, -1));
 
-        txtMonto.setBackground(new java.awt.Color(153, 102, 0));
-        txtMonto.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtMonto.setForeground(new java.awt.Color(73, 181, 172));
-        txtMonto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtMonto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        txtMonto.setCaretColor(new java.awt.Color(73, 181, 172));
-        txtMonto.setEnabled(false);
-        txtMonto.setFocusable(false);
-        txtMonto.setRequestFocusEnabled(false);
+        txtMonto.setEditable(false);
+        txtMonto.setBackground(new java.awt.Color(255, 250, 250));
+        txtMonto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMontoActionPerformed(evt);
+            }
+        });
+        txtMonto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtMontoKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, 44, -1));
 
-        jSeparator6.setBackground(new java.awt.Color(73, 181, 172));
-        jSeparator6.setForeground(new java.awt.Color(73, 181, 172));
-
-        jSeparator7.setBackground(new java.awt.Color(73, 181, 172));
-        jSeparator7.setForeground(new java.awt.Color(73, 181, 172));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(ddlEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(10, 10, 10)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtCantidadHoras, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(469, 469, 469)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(144, 144, 144)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(93, 93, 93)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel11)
-                .addGap(16, 16, 16)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtCantidadHoras, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(ddlEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(15, 15, 15)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(5, 5, 5)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
-        );
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cafee.jpg"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -461,10 +389,6 @@ public class OrdenFab_ManoObra extends javax.swing.JFrame {
         obj.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void txtCantidadHorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadHorasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCantidadHorasActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Empleado emp = (Empleado)ddlEmpleado.getSelectedItem();
@@ -574,16 +498,34 @@ public class OrdenFab_ManoObra extends javax.swing.JFrame {
                 {
                System.out.println (e);
                 }*/
-        
+        tablaMod.repaint();
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void txtCantidadHorasFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCantidadHorasFocusLost
-        CalcularMontoTotal();
-    }//GEN-LAST:event_txtCantidadHorasFocusLost
 
     private void ddlEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ddlEmpleadoActionPerformed
         CalcularMontoTotal();
     }//GEN-LAST:event_ddlEmpleadoActionPerformed
+
+    private void txtCantidadHorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadHorasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCantidadHorasActionPerformed
+
+    private void txtCantidadHorasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadHorasKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+
+        if(Character.isLetter(c)){
+            evt.consume();
+            JOptionPane.showMessageDialog(this, "Solo se admiten números","Advertencia",JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_txtCantidadHorasKeyTyped
+
+    private void txtMontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMontoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMontoActionPerformed
+
+    private void txtMontoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMontoKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMontoKeyTyped
     
     private void CalcularMontoTotal()
     {
@@ -638,10 +580,11 @@ public class OrdenFab_ManoObra extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTable tablaMod;
     private javax.swing.JTextField txtCantidadHoras;
     private datechooser.beans.DateChooserCombo txtFecha;

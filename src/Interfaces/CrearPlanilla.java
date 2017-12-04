@@ -32,8 +32,10 @@ public class CrearPlanilla extends javax.swing.JFrame {
      */
     public CrearPlanilla() {
         initComponents();
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+        setResizable(false);
+        DateFormat formatoFecha = new SimpleDateFormat("dd-MM-yyyy");
         Calendar fechahoy = Calendar.getInstance();
         Dimension size = txtPeriodo.getCalendarPreferredSize();
         size.width += 90;
@@ -67,6 +69,8 @@ public class CrearPlanilla extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtPeriodo.setLocale(new java.util.Locale("es", "SV", ""));
         jPanel1.add(txtPeriodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 93, 176, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -86,7 +90,7 @@ public class CrearPlanilla extends javax.swing.JFrame {
         });
         jPanel1.add(txtDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 46, 311, -1));
 
-        btnCancelar.setBackground(new java.awt.Color(117, 60, 17));
+        btnCancelar.setBackground(new java.awt.Color(255, 0, 0));
         btnCancelar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
         btnCancelar.setText("Cancelar");
@@ -95,7 +99,7 @@ public class CrearPlanilla extends javax.swing.JFrame {
                 btnCancelarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(263, 150, -1, -1));
+        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, -1, -1));
 
         btnGuardar.setBackground(new java.awt.Color(117, 60, 17));
         btnGuardar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -106,7 +110,7 @@ public class CrearPlanilla extends javax.swing.JFrame {
                 btnGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 150, -1, -1));
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Algerian", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -144,7 +148,7 @@ public class CrearPlanilla extends javax.swing.JFrame {
         try
         {
             String descripcion = txtDescripcion.getText();
-            DateFormat dffrom = new SimpleDateFormat("MM-dd-yy");
+            DateFormat dffrom = new SimpleDateFormat("dd-MM-YY");
             DateFormat dfto = new SimpleDateFormat("yyyy-MM-dd");
             Date today;
             today = dffrom.parse(txtPeriodo.getText());
@@ -214,7 +218,7 @@ public class CrearPlanilla extends javax.swing.JFrame {
                 ppst.execute();
             }
 
-            JOptionPane.showMessageDialog(this, "Se ha creado la planilla correctamente");
+            JOptionPane.showMessageDialog(this, "Planilla creada satisfactoriamente");
 
             this.setVisible(false);
             Planilla2 plan = new Planilla2();

@@ -73,7 +73,7 @@ public OrdenTableModel ordenesTM = new OrdenTableModel();
     public void Inicializar() {
         numOrdentxt.setText("");
         //saldoAtxt.setText("0.00");
-        DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+        DateFormat formatoFecha = new SimpleDateFormat("dd-MM-yyyy");
         Calendar fechahoy = Calendar.getInstance();
         Dimension size = txtfecha.getCalendarPreferredSize();
         size.width += 90;
@@ -217,20 +217,20 @@ public OrdenTableModel ordenesTM = new OrdenTableModel();
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(51, 51, 55));
-        jLabel1.setFont(new java.awt.Font("Gotham Thin", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(222, 222, 222));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Numero de orden");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 78, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(51, 51, 55));
-        jLabel3.setFont(new java.awt.Font("Gotham Thin", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(222, 222, 222));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Nombre");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 136, -1, 20));
 
         jLabel2.setBackground(new java.awt.Color(51, 51, 55));
-        jLabel2.setFont(new java.awt.Font("Gotham Thin", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(222, 222, 222));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Fecha");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 76, -1, -1));
 
@@ -274,6 +274,8 @@ public OrdenTableModel ordenesTM = new OrdenTableModel();
         jScrollPane1.setViewportView(tablaOrden);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 355, 780, 184));
+
+        txtfecha.setLocale(new java.util.Locale("es", "SV", ""));
         jPanel1.add(txtfecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(523, 77, -1, -1));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(73, 181, 172)), "COSTOS INDIRECTOS DE FABRICACIÓN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gotham Thin", 0, 11))); // NOI18N
@@ -314,8 +316,8 @@ public OrdenTableModel ordenesTM = new OrdenTableModel();
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 191, -1, -1));
 
         jLabel6.setBackground(new java.awt.Color(51, 51, 55));
-        jLabel6.setFont(new java.awt.Font("Gotham Thin", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(222, 222, 222));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Cantidad:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(311, 76, -1, -1));
 
@@ -419,7 +421,7 @@ public OrdenTableModel ordenesTM = new OrdenTableModel();
         saldoA="0";//saldoAtxt.getText();
         try
         {
-            DateFormat dffrom = new SimpleDateFormat("MM-dd-yy");
+            DateFormat dffrom = new SimpleDateFormat("dd-MM-yy");
             DateFormat dfto = new SimpleDateFormat("yyyy-MM-dd");
             Date today;
             today = dffrom.parse(txtfecha.getText());
