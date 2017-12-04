@@ -115,10 +115,10 @@ public class MenuCostos extends javax.swing.JFrame {
 
     private void btnPlanillasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlanillasActionPerformed
         // TODO add your handling code here:
-        MenuPlanillas menuPlanillas = new MenuPlanillas();
+        Planilla2 menuPlanillas = new Planilla2();
         menuPlanillas.setVisible(true);
         this.setVisible(false);
-        JOptionPane.showMessageDialog(this, "En mantenimiento!");
+        //JOptionPane.showMessageDialog(this, "En mantenimiento!");
     }//GEN-LAST:event_btnPlanillasActionPerformed
 
     private void btnAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtras1ActionPerformed
@@ -130,7 +130,7 @@ public class MenuCostos extends javax.swing.JFrame {
 
     private void btnPlanillas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlanillas1ActionPerformed
         // TODO add your handling code here:
-        CrearOrdenF menuOrdenF = new CrearOrdenF();
+        CrearOrdenFab menuOrdenF = new CrearOrdenFab();
         menuOrdenF.setVisible(true);
         
         this.setVisible(false);

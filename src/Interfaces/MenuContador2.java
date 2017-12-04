@@ -309,6 +309,9 @@ ArrayList<Cuenta> subCuentas = new ArrayList<Cuenta>();
 
     private void btnAjustarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjustarActionPerformed
         // TODO add your handling code here:
+        AjustarTransaccion menuAjustarT = new AjustarTransaccion();
+        menuAjustarT.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnAjustarActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed

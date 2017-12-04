@@ -65,7 +65,7 @@ public class IniciarSesion extends javax.swing.JFrame {
         /*Para desarrollo y evitar ingresar los datos cada vez
         que se ejecuta el sistema, dejar el usuario y contraseña sin comentario.*/
         
-        txtUsuario.setText("anto");
+        txtUsuario.setText("antonio");
         txtContrasenia1.setText("asd");
        
         

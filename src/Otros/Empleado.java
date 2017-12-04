@@ -2,15 +2,15 @@ package Otros;
 
 public class Empleado {
 
-    public static Empleado get(int fse) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private int codigo;
+   private int codigo;
     private String nombre;
     private Double salario;
+    private Double eficiencia;
     private int anio;
     private Double salarioDev;
+    /*private Double isss;
+    private Double afp;
+    private Double insafor;*/
     private Double cotizaciones;
     private Double aguinaldo;
     private Double vacaciones;
@@ -65,6 +65,13 @@ public class Empleado {
         this.salario = salario;
     }
 
+    public Double getEficiencia() {
+        return eficiencia;
+    }
+
+    public void setEficiencia(Double eficiencia) {
+        this.eficiencia = eficiencia;
+    }
 
     public int getAnio() {
         return anio;
