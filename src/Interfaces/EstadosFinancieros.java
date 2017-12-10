@@ -8,6 +8,7 @@ package Interfaces;
 import EstadosFinancieros.BalanceDeComprobacion;
 import EstadosFinancieros.BalanceGeneral;
 import EstadosFinancieros.EstadoDeCapital;
+import EstadosFinancieros.EstadoDeResultados;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -75,6 +76,11 @@ public class EstadosFinancieros extends javax.swing.JFrame {
         jLabel2.setText("Balance de Comprobacion");
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/estados_2.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel3.setText("Estado de Resultados");
@@ -207,6 +213,13 @@ public class EstadosFinancieros extends javax.swing.JFrame {
         menu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        EstadoDeResultados er = new EstadoDeResultados();
+        er.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

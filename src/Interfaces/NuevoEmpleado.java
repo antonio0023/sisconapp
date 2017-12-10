@@ -65,12 +65,18 @@ public class NuevoEmpleado extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel3.setText("Produccion");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel5.setText("Años");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, 20));
         getContentPane().add(txtNombreEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 182, -1));
+
+        txtEfi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEfiActionPerformed(evt);
+            }
+        });
         getContentPane().add(txtEfi, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 36, -1));
 
         txtAnios.setText("0");
@@ -91,7 +97,7 @@ public class NuevoEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 210, -1, -1));
-        getContentPane().add(txtSalario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 36, -1));
+        getContentPane().add(txtSalario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 50, -1));
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel6.setText("Salario ");
@@ -102,7 +108,7 @@ public class NuevoEmpleado extends javax.swing.JFrame {
                 chkDeptoProdActionPerformed(evt);
             }
         });
-        getContentPane().add(chkDeptoProd, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, -1, -1));
+        getContentPane().add(chkDeptoProd, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel7.setText("Eficiencia");
@@ -117,8 +123,8 @@ public class NuevoEmpleado extends javax.swing.JFrame {
     private void btnAgregarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarEmpleadoActionPerformed
         // TODO add your handling code here:
         String NOMBREEMPLEADO=txtNombreEmpleado.getText();
-        double SALARIO=Double.parseDouble(txtEfi.getText());
-        double EFI=Integer.parseInt(txtEfi.getText());
+        double SALARIO=Double.parseDouble(txtSalario1.getText());
+        double EFI=Double.parseDouble(txtEfi.getText());
         int ANIOS=Integer.parseInt(txtAnios.getText());
         Boolean deptoProd = chkDeptoProd.isSelected();
         if("".equals(NOMBREEMPLEADO) || "".equals(SALARIO) || "".equals(ANIOS)){
@@ -127,7 +133,7 @@ public class NuevoEmpleado extends javax.swing.JFrame {
             conectar();
             try{
                 Statement statatement = con.createStatement();
-                statatement.execute("INSERT INTO empleado(NOMBREEMPLEADO, SALARIO, EFICIENCIA, ANIOS,DeptoProduccion) VALUES ('"+NOMBREEMPLEADO+"','"+SALARIO+"','"+EFI+"','"+ANIOS+"', "+deptoProd+")");
+                statatement.execute("INSERT INTO empleado(NOMBREEMPLEADO, SALARIO, EFICIENCIA, ANIOS, DeptoProduccion) VALUES ('"+NOMBREEMPLEADO+"','"+SALARIO+"','"+EFI+"','"+ANIOS+"', "+deptoProd+")");
                 statatement.close();
                 con.close();
             }catch(SQLException e){
@@ -150,6 +156,10 @@ public class NuevoEmpleado extends javax.swing.JFrame {
     private void chkDeptoProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkDeptoProdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chkDeptoProdActionPerformed
+
+    private void txtEfiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEfiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEfiActionPerformed
 
     /**
      * @param args the command line arguments

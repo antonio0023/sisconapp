@@ -3,9 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/fanto/Desktop/Sistema%20Contable%202017%20segun%20Tesis%20del%20Cafe/SicCafe/src/Interfaces/EstadosFinancieros.java</file>
+            <file>file:/C:/Users/fanto/Desktop/Sistema%20Contable%202017%20segun%20Tesis%20del%20Cafe/SicCafe/src/Interfaces/AjustarTransaccion.java</file>
+            <file>file:/C:/Users/fanto/Desktop/Sistema%20Contable%202017%20segun%20Tesis%20del%20Cafe/SicCafe/src/Interfaces/MenuConta.java</file>
             <file>file:/C:/Users/fanto/Desktop/Sistema%20Contable%202017%20segun%20Tesis%20del%20Cafe/SicCafe/src/Interfaces/EliminarEmpleado.java</file>
-            <file>file:/C:/Users/fanto/Desktop/Sistema%20Contable%202017%20segun%20Tesis%20del%20Cafe/SicCafe/src/Interfaces/CrearPlanilla.java</file>
-            <file>file:/C:/Users/fanto/Desktop/Sistema%20Contable%202017%20segun%20Tesis%20del%20Cafe/SicCafe/src/Interfaces/CrearOrdenFab.java</file>
+            <file>file:/C:/Users/fanto/Desktop/Sistema%20Contable%202017%20segun%20Tesis%20del%20Cafe/SicCafe/src/EstadosFinancieros/EstadoDeResultadosTableModel.java</file>
+            <file>file:/C:/Users/fanto/Desktop/Sistema%20Contable%202017%20segun%20Tesis%20del%20Cafe/SicCafe/src/EstadosFinancieros/EstadoDeResultados.java</file>
+            <file>file:/C:/Users/fanto/Desktop/Sistema%20Contable%202017%20segun%20Tesis%20del%20Cafe/SicCafe/src/Interfaces/OrdenFab_ManoObra.java</file>
+            <file>file:/C:/Users/fanto/Desktop/Sistema%20Contable%202017%20segun%20Tesis%20del%20Cafe/SicCafe/src/Conexion/Conexion.java</file>
+            <file>file:/C:/Users/fanto/Desktop/Sistema%20Contable%202017%20segun%20Tesis%20del%20Cafe/SicCafe/src/Interfaces/NuevoEmpleado.java</file>
+            <file>file:/C:/Users/fanto/Desktop/Sistema%20Contable%202017%20segun%20Tesis%20del%20Cafe/SicCafe/src/Interfaces/AgregarTransaccion.java</file>
+            <file>file:/C:/Users/fanto/Desktop/Sistema%20Contable%202017%20segun%20Tesis%20del%20Cafe/SicCafe/src/EstadosFinancieros/BalanceDeComprobacion.java</file>
+            <file>file:/C:/Users/fanto/Desktop/Sistema%20Contable%202017%20segun%20Tesis%20del%20Cafe/SicCafe/src/Interfaces/MenuContador2.java</file>
         </group>
     </open-files>
 </project-private>
